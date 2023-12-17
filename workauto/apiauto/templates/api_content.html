@@ -1,0 +1,59 @@
+{% block content_left %}
+<div class="bd-example">
+<table class="table table-dark table-sm">
+  <tr>
+    <td class="table-light">Table of Contents</td>
+  </tr>  
+</table>
+</div>
+<nav>  
+  <ul>
+    <li><a href="#" class="menulink">Introduction to API</a>
+      <ul>
+        <li><a href="{% url 'apiauto' 'Web Services' %}">Web Services</a></li>
+        <li><a href="{% url 'apiauto' 'SOAP' %}">SOAP</a></li>
+        <li><a href="{% url 'apiauto' 'REST' %}">REST</a></li>
+        <li><a href="{% url 'apiauto' 'Authentication' %}">Authentication</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#" class="menulink">API Automation Tools anf Techniques</a>
+      <ul>
+        <li><a href="{% url 'apiauto' 'curl' %}">CURL</a></li>
+        <li><a href="{% url 'apiauto' 'postman' %}">POSTMAN</a></li>
+        <li><a href="{% url 'apiauto' 'insomnia' %}">Insomnia</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#" class="menulink">API Automation with Python</a>
+      <ul>
+        <li><a href="#">Libraries</a></li>
+        <li><a href="{% url 'apiauto' 'TDD Structure' %}">Structure</a></li>
+        <li><a href="{% url 'apiauto' 'components' %}">Components</a></li>
+        <li><a href="{% url 'apiauto' 'REST Request' %}">REST Request</a></li>
+        <li><a href="{% url 'apiauto' 'Validations' %}">Validations</a></li>
+        <li><a href="{% url 'apiauto' 'Test Executions' %}">Test Executions</a></li>
+        <li><a href="{% url 'apiauto' 'Reports' %}">Reports</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#" class="menulink">API Automation with Python BDD</a>
+      <ul>
+        <li><a href="{% url 'apiauto' 'Gherkin' %}">Gherkin</a></li>
+        <li><a href="{% url 'apiauto' 'Features' %}">Features</a></li>
+        <li><a href="{% url 'apiauto' 'Steps Definitions' %}">Step Definitions</a></li>
+        <li><a href="{% url 'apiauto' 'Test Executions BDD' %}">Test Executions</a></li>
+        <li><a href="{% url 'apiauto' 'Reports BDD' %}">Test Executions</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<script>
+  {% comment %} $('ul li ul').hide();
+  $('.menulink').click(function(){
+    var thisMenu = $(this).next('ul');
+    $('ul li ul').not(thisMenu).hide();    
+    thisMenu.toggle();   
+  }); {% endcomment %}
+</script>
+{% endblock %}

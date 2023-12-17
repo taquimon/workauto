@@ -1,3 +1,11 @@
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+  font-size: small;
+  color: white;
+  background-color: #212529 !important;
+
+}
+
 .cardBox {
   float: left;
   font-size: 1.2em;
@@ -52,19 +60,19 @@ p {
   margin-bottom: 1.8em;
 }
 
-strong {
+/* strong {
   background: #fff;
   border-radius: 100%;
   color: #222;
   font-size: 1.5em;
   line-height: 30px;
   padding: 0 7px 4px 6px;
-}
+} */
 
 a {
   /*padding: 0.3em 0.5em;*/
-  background: #333;
-  color: #fff;
+  background: #212529 !important;
+  color: #fff !important;
   text-decoration: none;
   border-radius: 1px;
   font-size: 0.9em;
@@ -72,11 +80,14 @@ a {
 }
 
 a:hover {
-  background: #fff;
-  color: #333;
+   color: #212529 !important;
+   background: #b3b0b0 !important;
   text-shadow: 0 0 1px #333;
 }
 
+.dropdown-menu {
+  background-color: #212529 !important;
+}
 .cardBox:nth-child(1) .card .back {
   background: cornflowerblue;
 }
@@ -200,4 +211,15 @@ links for menu
 }
 .navLinkActive {
     background:#3d5f80
+}
+
+blockquote {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;  
+  margin-left: 0.7em;
+  margin-right: 40px;  
+  padding-left: 4px;
+  border-left: 4px solid #006699 ;
+  background:#EDEDED;
 }

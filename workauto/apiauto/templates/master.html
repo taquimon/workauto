@@ -2,12 +2,12 @@
 <html>
 <head>
   <title>{% block title %}{% endblock %}</title>
-
-  {% load bootstrap5 %}
+  {% load bootstrap5 %}  
   {% bootstrap_css %}
   {% bootstrap_javascript %}
   {% load static %}
-  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}"/>
   <script src="{% static 'jquery-3.7.1.min.js' %}"></script>
   <script src="{% static 'imac.js' %}"></script>
 </head>
@@ -45,41 +45,29 @@
     </div>
 </div>
 </nav>
-<!--<div class="position-fixed text-uppercase mb-2 p-2 start-0 text-center w-100" role="navigation">-->
-<!--    <div class="smallContainer p-3 shadow-lg rounded">-->
-<!--      <div class="d-flex align-items-center justify-content-around">-->
-<!--        <div class="navLink navLinkActive">-->
-<!--          <a href="{% url 'main' %}"><div><i class="fa-solid fa-house"></i></div> <div class="navLabel">Home</div></a>-->
-<!--        </div>-->
-<!--        <div class="navLink">-->
-<!--          <a href="{% url 'all' %}"><div><i class="fa-brands fa-app-store-ios"></i></div> <div class="navLabel">All</div></a>-->
-<!--        </div>-->
-<!--        <div class="navLink">-->
-<!--          <a href="#"><div><i class="fa-solid fa-circle-user"></i></div> <div class="navLabel">Account</div></a>-->
-<!--        </div>-->
-<!--        <div class="navLink">-->
-<!--          <a href="#"><div><i class="fa-solid fa-comment"></i></div> <div class="navLabel">Message</div></a>-->
-<!--        </div>-->
-<!--        <div class="navLink">-->
-<!--          <a href="#"><div><i class="fa-solid fa-headset"></i></div> <div class="navLabel">Call</div></a>-->
-<!--        </div>-->
-<!--        <div class="navLink">-->
-<!--          <a href="#"><div><i class="fa-solid fa-calendar"></i></div> <div class="navLabel">Book</div></a>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-
-<!--  <div class="vh-100 d-flex align-items-center" style="background:#344a5f">-->
-<!--    <div class="container">-->
-<!--      <div class="row">-->
-<!--        <div class="col-lg-8 mx-auto text-center">-->
-<!--          <h1 class="text-white"><span class="d-block display-1" style="font-family:impact">iMAC STYLE</span><span class="d-block display-4">DOCK NAVBAR</span></h1>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-  {% block content %}
-  {% endblock %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+    {% block content_header %}    
+      {% endblock %}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-2">
+      {% block content_left %}
+      {% endblock %}
+    </div>
+    <div class="col col-lg-8">
+      {% block content %}
+      {% endblock %}
+    </div>
+    <div class="col col-lg-2">
+      {% block content_right %}
+      {% endblock %}
+    </div>
+  </div>
+</div>
+  
 
 </body>
 </html>

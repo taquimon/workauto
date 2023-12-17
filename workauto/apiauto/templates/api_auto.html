@@ -1,0 +1,12 @@
+{% extends "main.html" %}
+{% load extras %}
+
+{% block content_left %}
+{% include "api_content.html" %}
+{% endblock %}
+{% block content %}
+    <h1>{{ markdown_content.title }}</h1>
+    <p>{{ markdown_content.content| render_markdown }}</p>
+{% endblock %}
+{% block content_right %}
+{% endblock %}

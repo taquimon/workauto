@@ -1,15 +1,107 @@
-{% extends "master.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  {% load bootstrap5 %}  
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}"/>
+  <script src="{% static 'jquery-3.7.1.min.js' %}"></script>
+  <script src="{% static 'imac.js' %}"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">    
+    <a class="navbar-brand" href="#">
+      <img src="{% static 'img/icons8-piramid.png' %}" alt="Logo" width="24" height="24"/>
+      Automation
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Automation Testing
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'apiauto' 'Web Services' %}">API</a></li>
+            <li><a class="dropdown-item" href="#">UI</a></li>
+            <li><a class="dropdown-item" href="#">Mobile</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>        
+      </ul> 
+  </div>
+</div>
+</nav>
 
-{% block title %}
-  Automation Club
-{% endblock %}
-
-
-{% block content %}
-  <h1>My Automation Club</h1>
-
-  <h3>API</h3>
+{% comment %} <div class="container-fluid">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse mb-2 p-2 start-0 text-center w-100" id="navbarTogglerDemo01">
+<!--<div class="position-fixed text-uppercase mb-2 p-2 start-0 text-center top-0 w-100" role="navigation">-->
+    <div class="smallContainer p-3 shadow-lg rounded">
+      <div class="d-flex align-items-center justify-content-around">
+          <div class="navLink navLinkActive">
+            <a href="{% url 'main' %}"><div><i class="fa-solid fa-house"></i></div> <div class="navLabel">Home</div></a>
+          </div>
+          <div class="navLink">
+            <a href="{% url 'all' %}"><div><i class="fa-solid fa-shirt"></i></div> <div class="navLabel">Productos</div></a>
+          </div>
+          <div class="navLink">
+            <a href="#"><div><i class="fa-solid fa-store"></i></div> <div class="navLabel">Tienda</div></a>
+          </div>
+          <div class="navLink">
+            <a href="#"><div><i class="fa-solid fa-magnifying-glass"></i></div> <div class="navLabel">Buscar</div></a>
+          </div>
+          <div class="navLink">
+            <a href="#"><div><i class="fa-solid fa-headset"></i></div> <div class="navLabel">Pedidos</div></a>
+          </div>
+          <div class="navLink">
+            <a href="#"><div><i class="fa-solid fa-calendar"></i></div> <div class="navLabel">Contactos</div></a>
+          </div>
+        </div>
+<!--    </div>-->
+  </div>
+    </div>
+</div>
+</nav> {% endcomment %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+    {% block content_header %}    
+      {% endblock %}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-2">
+      {% block content_left %}
+      {% endblock %}
+    </div>
+    <div class="col col-lg-8">
+      {% block content %}
+      {% endblock %}
+    </div>
+    <div class="col col-lg-2">
+      {% block content_right %}
+      {% endblock %}
+    </div>
+  </div>
+</div>
   
-  <p>Check out all our <a href="all/">api</a></p>
-  
-{% endblock %}
+
+</body>
+</html>
